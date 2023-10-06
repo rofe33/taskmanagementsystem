@@ -10,7 +10,7 @@ CREATE TABLE Clients (
 CREATE TABLE Tasks (
     Task_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     Client_ID INT NOT NULL,
-    Task_Status VARCHAR(10) NOT NULL,
+    Task_Status VARCHAR(15) NOT NULL,
     Task TEXT NOT NULL,
     Task_Location VARCHAR(50) NOT NULL,
     FOREIGN KEY (Client_ID) REFERENCES Clients(Client_ID)
