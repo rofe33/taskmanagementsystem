@@ -54,5 +54,7 @@ if (!($cuq->rowCount() > 0)) {
 
       <button type="submit">Add Task</button>
     </form>
+
+    <a href="index.html">Go Back</a>
   </body>
 </html>

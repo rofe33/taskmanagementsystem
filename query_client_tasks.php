@@ -38,5 +38,7 @@ if (!($cuq->rowCount() > 0)) {
 
       <button type="submit">Query Tasks</button>
     </form>
+
+    <a href="index.html">Go Back</a>
   </body>
 </html>

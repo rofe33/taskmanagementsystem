@@ -63,5 +63,7 @@ if (!($cuq->rowCount() > 0)) {
         <?php } ?>
       </tbody>
     </table>
+
+    <a href="query_client_tasks.php">Go Back</a>
   </body>
 </html>
