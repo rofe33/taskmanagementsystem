@@ -14,24 +14,17 @@ if ($cuq->rowCount() > 0) {
   echo "The User Exists... <br />";
   echo $redirect_phrase;
 
+  echo '<script>
+          setTimeout(function() {
+            window.location.href = "' . $_SERVER['HTTP_REFERER'] . '";
+          }, 3000);
+        </script>';
 } else {
-  echo "The user doesn't exists... <br />";
-  echo "Adding user to database... <br />";
-
   $stmt = $dbh->prepare("INSERT INTO Clients (Client_Username) VALUES (:username);");
 
   $stmt->bindParam(':username', $Client_Username);
   $stmt->execute();
-
-  echo "The user is added to the database... <br />";
-  echo $redirect_phrase;
 }
 
-
-echo '<script>
-        setTimeout(function() {
-          window.location.href = "' . $_SERVER['HTTP_REFERER'] . '";
-        }, 3000);
-      </script>';
-
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 exit();

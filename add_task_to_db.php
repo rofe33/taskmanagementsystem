@@ -17,6 +17,11 @@ if (!($cuq->rowCount() > 0)) {
   echo "The User Doesn't Exists... <br />";
   echo $redirect_phrase;
 
+  echo '<script>
+          setTimeout(function() {
+            window.location.href = "' . $_SERVER['HTTP_REFERER'] . '";
+          }, 1000);
+        </script>';
 } else {
   $client = $cuq->fetch(PDO::FETCH_ASSOC);
 
@@ -24,23 +29,12 @@ if (!($cuq->rowCount() > 0)) {
 
   $stmt = $dbh->prepare("INSERT INTO `Tasks` (Client_ID, Task_Status, Task, Task_Location) VALUES (:Client_ID, :Task_Status, :taskTask, :Task_Location);");
 
-  echo "Adding Task to database... <br />";
-
   $stmt->bindValue(':Client_ID', $taskClient_ID, PDO::PARAM_INT);
   $stmt->bindValue(':Task_Status', $taskStatus, PDO::PARAM_STR);
   $stmt->bindValue(':taskTask', $taskTask, PDO::PARAM_STR);
   $stmt->bindValue(':Task_Location', $taskLocation, PDO::PARAM_STR);
   $stmt->execute();
-
-  echo "The task is added to the database... <br />";
-  echo $redirect_phrase;
 }
 
-
-echo '<script>
-        setTimeout(function() {
-          window.location.href = "' . $_SERVER['HTTP_REFERER'] . '";
-        }, 1000);
-      </script>';
-
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 exit();
