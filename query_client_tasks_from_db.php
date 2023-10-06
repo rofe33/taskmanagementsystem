@@ -19,6 +19,7 @@ if (!($cuq->rowCount() > 0)) {
             window.location.href = "' . $_SERVER['HTTP_REFERER'] . '";
           }, 1000);
         </script>';
+  exit();
 } else {
   $client = $cuq->fetch(PDO::FETCH_ASSOC);
 
