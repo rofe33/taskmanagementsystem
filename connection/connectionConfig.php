@@ -1,0 +1,13 @@
+<?php
+/* 2023-10-0616:29:26 */
+
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "";
+$db_name = "TaskManagementSystem";
+
+try {
+  $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+} catch (PDOException $e) {
+  echo "Couldn't Connect";
+}
