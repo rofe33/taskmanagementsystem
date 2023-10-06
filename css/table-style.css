@@ -1,0 +1,31 @@
+/* 2023-10-06 20:42:51 */
+thead,
+tfoot {
+  background-color: #3f87a6;
+  color: #fff;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 5px 10px;
+}
+
+tr.completed {
+  background-color: #2ff76e;
+}
+
+tr.incomplete {
+  background-color: #f7772f;
+}
+
+tr.inprogress {
+  background-color: #f7d12f;
+}
