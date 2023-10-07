@@ -48,8 +48,8 @@ if (!($cuq->rowCount() > 0)) {
         <tr>
           <th scope="col">Task Id</th>
           <th scope="col">Task</th>
-          <th scope="col">Task Status</th>
           <th scope="col">Task Location</th>
+          <th scope="col">Task Status</th>
         </tr>
       </thead>
       <tbody>
