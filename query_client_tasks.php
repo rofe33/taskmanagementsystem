@@ -6,14 +6,15 @@ $cuq = $dbh->prepare("SELECT Client_Username FROM Clients");
 $cuq->execute();
 
 if (!($cuq->rowCount() > 0)) {
-  echo "There are no usernames <br />";
+  echo "There are no clients <br />";
   echo "Redirecting you to add clients :)";
 
   echo '<script>
           setTimeout(function() {
             window.location.href = "add_client.html";
-          }, 3000);
+          }, 2000);
         </script>';
+  exit();
 }
 ?>
 <!DOCTYPE html>
